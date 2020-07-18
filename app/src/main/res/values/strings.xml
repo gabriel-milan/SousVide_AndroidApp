@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">SousVide</string>
-    <string name="app_version">VERSION_NO</string>
-    <string name="labelIntro">SousVide</string>
-    <string name="btnStart">Start</string>
-    <string name="btnConnected">CONN</string>
-</resources>
