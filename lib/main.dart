@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:SousVide/pages/splash.dart';
-import 'package:SousVide/pages/home.dart';
+import 'package:SousVide/pages/monitor.dart';
 
-void main() => runApp(MaterialApp(
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
+    runApp(MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.red,
         accentColor: Colors.yellowAccent,
@@ -13,6 +18,11 @@ void main() => runApp(MaterialApp(
         backgroundColor: Colors.redAccent,
         secondaryColor: Colors.black,
         textColor: Colors.white,
-        nextPage: HomePage(),
+        nextPage: Monitor(
+          backgroundColor: null,
+          widgetsBorder: 10,
+        ),
       ),
     ));
+  });
+}
